@@ -212,6 +212,7 @@ export type OnShouldStartLoadWithRequest = (
 
 export interface CommonNativeWebViewProps extends ViewProps {
   cacheEnabled?: boolean;
+  incognito?: boolean;
   injectedJavaScript?: string;
   mediaPlaybackRequiresUserAction?: boolean;
   messagingEnabled: boolean;
@@ -258,7 +259,6 @@ export interface IOSNativeWebViewProps extends CommonNativeWebViewProps {
   decelerationRate?: number;
   directionalLockEnabled?: boolean;
   hideKeyboardAccessoryView?: boolean;
-  incognito?: boolean;
   pagingEnabled?: boolean;
   scrollEnabled?: boolean;
   useSharedProcessPool?: boolean;
@@ -270,11 +270,6 @@ export interface IOSWebViewProps extends WebViewSharedProps {
    * @platform ios
    */
   useWebKit?: boolean;
-
-  /**
-   * Does not store any data within the lifetime of the WebView.
-   */
-  incognito?: boolean;
 
   /**
    * Boolean value that determines whether the web view bounces

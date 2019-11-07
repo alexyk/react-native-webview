@@ -105,12 +105,6 @@ class WebView extends React.Component<IOSWebViewProps, State> {
         'The allowsBackForwardNavigationGestures property is not supported when useWebKit = false',
       );
     }
-
-    if (!this.props.useWebKit && this.props.incognito) {
-      console.warn(
-        'The incognito property is not supported when useWebKit = false',
-      );
-    }
   }
 
   // eslint-disable-next-line react/sort-comp
@@ -290,7 +284,6 @@ class WebView extends React.Component<IOSWebViewProps, State> {
     }
 
     this.showRedboxOnPropChanges(prevProps, 'allowsInlineMediaPlayback');
-    this.showRedboxOnPropChanges(prevProps, 'incognito');
     this.showRedboxOnPropChanges(prevProps, 'mediaPlaybackRequiresUserAction');
     this.showRedboxOnPropChanges(prevProps, 'dataDetectorTypes');
 
